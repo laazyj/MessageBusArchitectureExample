@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Message Bus Architecture Example</h1>
+    <p class="lead">This solution demonstrates an example use of a Message Bus Architecture, using NServiceBus.</p>
+    <p><a href="http://particular.net/nservicebus" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm(MVC.Home.FireAndForgetCommand())) {
+            <h2>'Fire-and-Forget' Commands</h2>
+            <p>
+                The most common type of Message used in a Message Bus system is a 'Command'. This is a message that tells the 
+                system to do something. It is expected that the Command will always eventually succeed so there is no need to 
+                wait for a response. 
+                Although there is no guarantee of WHEN the command will have succeeded and this needs to be considered when designing
+                the User-Interface that generates the command.
+            </p>
+            <p><button class="btn btn-default" type="submit">Test it out &raquo;</button></p>
+        }
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>
