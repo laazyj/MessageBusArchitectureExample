@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using System.Reflection;
+using MessageBusArchitectureExample.Service1.Messages.Events;
 using MessageBusArchitectureExample.Service2.Messages.Commands;
 using NServiceBus;
 
@@ -19,7 +20,11 @@ namespace MessageBusArchitectureExample.Service2
         /// <summary>
         /// Assemblies containing messages used by this service.
         /// </summary>
-        static readonly Assembly[] MessageAssemblies = { typeof(MyCommand).Assembly };
+        static readonly Assembly[] MessageAssemblies =
+        {
+            typeof(MyCommand).Assembly, 
+            typeof(IFireAndForgetCommandReceivedEvent).Assembly
+        };
 
         public void Customize(BusConfiguration configuration)
         {

@@ -63,6 +63,7 @@
     <Compile Include="Container.cs" />
     <Compile Include="EndpointConfig.cs" />
     <Compile Include="MyCommandHandler.cs" />
+    <Compile Include="MyEventSubscriber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +80,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MessageBusArchitectureExample.Service1.Messages\MessageBusArchitectureExample.Service1.Messages.csproj">
+      <Project>{1cf31c2a-c881-423d-a0f0-dc8887851cd4}</Project>
+      <Name>MessageBusArchitectureExample.Service1.Messages</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MessageBusArchitectureExample.Service2.Messages\MessageBusArchitectureExample.Service2.Messages.csproj">
       <Project>{10ded063-a325-4fef-b0e0-0328539ae333}</Project>
       <Name>MessageBusArchitectureExample.Service2.Messages</Name>
