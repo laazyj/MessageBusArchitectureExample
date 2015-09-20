@@ -17,7 +17,9 @@ namespace MessageBusArchitectureExample.Web
 
             var configuration = new BusConfiguration();
             // Only scan known Messages assemblies rather than all assemblies in 'bin' - faster startup time.
-            configuration.AssembliesToScan(AppDomain.CurrentDomain.GetAssemblies().Where(a => a.GetName().Name.EndsWith(".Messages")));
+            var messages = AppDomain.CurrentDomain.GetAssemblies()
+                .Where(a => a.GetName().Name.EndsWith(".Messages"));
+            configuration.AssembliesToScan(messages);
             // Use NServiceBus Unobtrusive Mode
             configuration.Conventions()
                 .DefiningCommandsAs(t => t.Namespace != null && t.Namespace.EndsWith("Commands"))
